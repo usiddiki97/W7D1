@@ -1,0 +1,17 @@
+<h1>Sign Up For These Lil Cats!</h1> 
+
+<form action="<%=users_url %>" method="POST">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+
+<label>Username:
+<input type=text name="users[username]">
+</label>
+
+<label>Password:
+<input type="password" name="users[password]">
+</label>
+<br>
+<br>
+
+<input type="submit" value="Create New User">
+</form>

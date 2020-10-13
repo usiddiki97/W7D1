@@ -1,0 +1,47 @@
+<h1> <%= @cat.name %> </h1>
+<table>
+    <thead>
+        <tr>
+            <th colspan="1">Cat Attributes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr></tr>
+        <tr>
+            <td>Name</td>
+            <td><%= @cat.name %></td>
+        </tr>
+        <tr>
+            <td>Birth Date</td>
+            <td><%= @cat.birth_date %></td>
+        </tr>
+        <tr>
+            <td>Color</td>
+            <td><%= @cat.color %></td>
+        </tr>
+        <tr>
+            <td>Sex</td>
+            <td><%= @cat.sex %></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><%= @cat.description %></td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="<%= cats_url %>">Back to all cats!</a>
+<br>
+<a href="<%= edit_cat_url(@cat) %>">Edit this cat!</a>
+
+<h2>Rental Requests</h2>
+<table>
+  <tr>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Status</th>
+  </tr>
+  <% @cat.rental_requests.order('start_date').each do |req| %>
+    <%= render 'req_tr', req: req %>
+  <% end %>
+</table>
